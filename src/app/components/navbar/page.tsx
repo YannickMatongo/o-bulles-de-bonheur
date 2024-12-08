@@ -1,5 +1,7 @@
 import { Menu, X } from "lucide-react";
 import React from "react";
+import Image from "next/image";
+import Logo from "/public/img/logo2.png";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -9,19 +11,27 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-20">
           <div className="flex items-center">
-            <h1 className="text-2xl font-serif text-zen-stone">O bulle de bonheur</h1>
+            <Image
+              src={Logo}
+              alt="logo"
+              width={100} 
+              height={100} 
+              className="w-15 h-15 sm:w-20 sm:h-18 lg:w-22 lg:h-20" 
+            />
+            <h1 className="text-2xl font-serif text-zen-stone">O bulles de bonheur</h1>
           </div>
 
           <div className="hidden md:flex items-center space-x-8">
             <NavLink href="#home">Accueil</NavLink>
             <NavLink href="#concept">Concept</NavLink>
             <NavLink href="#news">Actualités</NavLink>
-            <NavLink href="#products">Nos produits</NavLink>
+            <NavLink href="#tarif">Tarifs</NavLink>
             <NavLink href="#contact">Contact</NavLink>
             <NavLink href="#faq">FAQ</NavLink>
-            <button className="px-6 py-2 bg-zen-sage text-white rounded-md hover:bg-zen-moss transition-colors">
+            {/* Boutton */}
+            {/* <button className="px-6 py-2 bg-zen-sage text-white rounded-md hover:bg-zen-moss transition-colors">
               Reserver
-            </button>
+            </button> */}
           </div>
 
           <div className="md:hidden flex items-center">
@@ -39,7 +49,7 @@ export default function Navbar() {
             <MobileNavLink href="#home">Accueil</MobileNavLink>
             <MobileNavLink href="#concept">Concept</MobileNavLink>
             <MobileNavLink href="#news">Actualités</MobileNavLink>
-            <MobileNavLink href="#products">Nos produits</MobileNavLink>
+            <MobileNavLink href="#tarif">Tarifs</MobileNavLink>
             <MobileNavLink href="#contact">Contact</MobileNavLink>
             <MobileNavLink href="#faq">FAQ</MobileNavLink>
             <button className="w-full text-left block px-3 py-2 bg-zen-sage text-white rounded-md">

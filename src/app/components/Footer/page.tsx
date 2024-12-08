@@ -1,17 +1,25 @@
 import React from 'react';
 import { Facebook, Instagram, Leaf, Mail, MapPin, Phone } from 'lucide-react';
-
+import Logo from "/public/img/logo2.png";
+import Image from 'next/image';
 export default function Footer(){
 
   return(
     <footer className="bg-zen-stone text-zen-beige">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
           {/* Brand */}
-          <div>
+          <div className='flex flex-col items-center text-center'>
             <div className="flex items-center gap-2 mb-4">
-              <Leaf className="h-6 w-6" />
-              <span className="text-xl font-serif">Serenity Haven</span>
+              {/* <Leaf className="h-6 w-6" /> */}
+              <Image
+              src={Logo}
+              alt="logo"
+              width={100} 
+              height={100} 
+              className="w-15 h-15 sm:w-20 sm:h-18 lg:w-22 lg:h-20" 
+            />
+              <span className="text-2xlfont-serif">O Bulles De Bonheur</span>
             </div>
             <p className="text-zen-beige/80 mb-4">
               Your sanctuary of peace and wellness in the heart of nature.
@@ -24,8 +32,8 @@ export default function Footer(){
           </div>
 
           {/* Quick Links */}
-          <div>
-            <h3 className="font-serif text-lg mb-4">Quick Links</h3>
+          <div className='flex flex-col items-center text-center'>
+            <h3 className="font-serif text-2xl mb-4">Liens</h3>
             <ul className="space-y-2">
               <FooterLink href="#home">Accueil</FooterLink>
               <FooterLink href="#concept">Concept</FooterLink>
@@ -37,12 +45,12 @@ export default function Footer(){
           </div>
 
           {/* Contact */}
-          <div>
-            <h3 className="font-serif text-lg mb-4">Contact</h3>
+          <div className='flex flex-col items-center text-center'>
+            <h3 className="font-serif text-2xl mb-4">Contact</h3>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <MapPin className="h-5 w-5 shrink-0 mt-1" />
-                <span className="text-zen-beige/80">1 chemin du val d'Yerres, 77111 SOIGNOLLES-EN-BRIE</span>
+                <span className="text-zen-beige/80">1 chemin du val d'Yerres,<br/> 77111 SOIGNOLLES-EN-BRIE</span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="h-5 w-5 shrink-0" />
@@ -55,26 +63,6 @@ export default function Footer(){
             </ul>
           </div>
 
-          {/* Newsletter */}
-          <div>
-            <h3 className="font-serif text-lg mb-4">Newsletter</h3>
-            <p className="text-zen-beige/80 mb-4">
-              Subscribe to receive updates about our latest offers and wellness tips.
-            </p>
-            <form className="space-y-2">
-              <input
-                type="email"
-                placeholder="Your email address"
-                className="w-full px-4 py-2 bg-white/10 rounded-md placeholder-zen-beige/50 border border-zen-beige/20 focus:outline-none focus:ring-2 focus:ring-zen-sage"
-              />
-              <button
-                type="submit"
-                className="w-full px-4 py-2 bg-zen-sage text-white rounded-md hover:bg-zen-moss transition-colors"
-              >
-                Subscribe
-              </button>
-            </form>
-          </div>
         </div>
 
         {/* Bottom */}
